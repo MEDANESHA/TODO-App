@@ -1,0 +1,114 @@
+
+.Body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+body.light .Body {
+  background-color: #fafafa;
+}
+
+body.dark .Body {
+  background-color: #181824;
+}
+
+.MainCont{
+  margin-top: -14rem;
+  padding: 0 2rem;
+  border-radius: 0.5rem;
+  width: 100%;
+  max-width: 44rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.inputCont{
+  padding: 16px 20px;
+  border-radius: 0.3rem;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+}
+.listCont{
+  border-radius: 0.3rem;
+  box-shadow: 0 10px 20px -10px rgba(0, 0, 0, 0.2);
+}
+
+
+body.dark .inputCont,
+body.dark .listCont {
+  background-color: #25273c;
+  color: #ffffff; /* dark navy */
+}
+
+
+
+/* Light Theme */
+body.light .inputCont,
+body.light .listCont{
+  background-color: #ffffff;
+  color: #25273c;
+}
+
+body.light .filterButtonsMobile {
+  background-color: #ffffff;
+}
+
+body.dark .filterButtonsMobile {
+  background-color: #25273c;
+}
+
+
+.infoText{
+align-self: center;
+font-size: 0.9rem;
+font-weight: 500;
+padding-bottom: 2rem;
+color: #c6c5c5;
+}
+.filterButtonsMobile {
+  display: none; /* hide by default */
+}
+@media (max-width: 768px) {
+  .filterButtonsMobile {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+  }
+
+  .filterButtonsMobile button {
+    border: none;
+    background: none;
+    color: #5b5e7e;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  body.light .filterButtonsMobile button:hover {
+    color:  #393a4c; /* dark divider */
+  }
+  
+  /* Light Theme */
+  body.dark .filterButtonsMobile button:hover {
+    color: #cacde8; /* soft gray divider for light mode */
+  }
+
+  .filterButtonsMobile button.active {
+    color: hsl(220, 98%, 61%);
+  }
+
+  /* Hide footer's internal filter buttons (if styled) */
+  .TodoFooter .filterButtonsDesktop {
+    display: none;
+  }
+  .HeaderTitle {
+    font-size: 1.6rem;
+    font-weight: 600;
+  }
+
+  .MainCont{
+    margin-top: -16rem;
+  }
+}

@@ -1,0 +1,186 @@
+
+
+.TodoItemContent {
+  display: flex;
+  align-items: center;
+}
+.TodoItemInput {
+  margin-left: 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: transparent;
+  outline: none;
+}
+
+
+.TodoItemCompleted {
+    text-decoration: line-through;
+    color: gray;
+  }
+  
+ 
+.DeleteButton {
+    position: relative;
+   
+    background: none;
+    border: none;
+    padding: 4px;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .TodoItem:hover .DeleteButton {
+    opacity: 1;
+  }
+  
+  .DeleteIcon {
+    width: 20px;
+    height: 20px;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+  }
+  
+  .DeleteButton:hover .DeleteIcon {
+    opacity: 1;
+  }
+
+  /* Container */
+.TodoItem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    font-family: 'Inter', sans-serif;
+  }
+
+  /* Dark Theme */
+body.dark .TodoItem {
+    border-bottom: 1px solid #393a4c; /* dark divider */
+  }
+  
+  /* Light Theme */
+  body.light .TodoItem {
+    border-bottom: 1px solid #e3e4f1; /* soft gray divider for light mode */
+  }
+  
+  .TodoItemContent {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Custom Checkbox Wrapper */
+  .CustomCheckbox {
+    position: relative;
+    margin-right: 16px;
+    cursor: pointer;
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+  }
+  
+  .CustomCheckbox input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  
+  /* Circle */
+  .Checkmark {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  /* Gradient + checkmark when checked */
+  .CustomCheckbox input:checked + .Checkmark {
+    background: linear-gradient(135deg, #55ddff, #c058f3);
+    border: none;
+  }
+  
+  .CustomCheckbox input:checked + .Checkmark::after {
+    content: '✔';
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  /* Text */
+  .TodoText {
+    font-size: 16px;
+  }
+  
+  .TodoText.Completed {
+    text-decoration: line-through;
+    color: #777;
+  }
+  
+  /* Delete button */
+  .DeleteButton {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+  }
+  
+  
+  .DeleteButton:hover .DeleteIcon {
+    opacity: 1;
+  }
+  
+
+  .TodoItem {
+    position: relative;
+    background: #25273c; /* background color */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border 0.3s ease;
+  }
+  
+  .TodoItem::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    z-index: -1;
+    background: linear-gradient(
+      90deg,
+      #55ddff,
+      #c058f3,
+      #f39c12,
+      #2ecc71,
+      #55ddff
+    );
+    background-size: 300% 300%;
+    border-radius: 10px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .TodoItem:hover::before {
+    opacity: 1;
+    animation: rainbowBorder 3s linear infinite;
+  }
+  
+  @keyframes rainbowBorder {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

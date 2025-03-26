@@ -1,0 +1,53 @@
+.TodoFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+  color: #718096;
+}
+
+.TodoFooter span {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.TodoFooter button {
+    background: none;
+    border: none;
+    color: #5b5e7e;
+    font-weight: 500;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: color 0.2s ease;
+  }
+  
+  
+  .TodoFooter button:focus {
+    outline: none;
+    color: rgb(77, 77, 230);
+  }
+
+  .TodoFooter-buttons{
+    display: flex;
+    gap: 0.9rem;
+  }
+  .TodoFooter-buttons button{
+    font-weight: 600;
+  }
+
+    /* Dark Theme */
+body.light .TodoFooter button:hover {
+    color:  #393a4c; /* dark divider */
+  }
+  
+  /* Light Theme */
+  body.dark .TodoFooter button:hover {
+    color: #cacde8; /* soft gray divider for light mode */
+  }
+
+  @media (max-width: 768px) {
+    .TodoFooter-buttons{
+      display: none;
+    }
+  }
