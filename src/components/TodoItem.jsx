@@ -26,3 +26,4 @@ export default function TodoItem({ todo, toggleTodo, deleteTodo }) {
     </div>
   );
 }
+
